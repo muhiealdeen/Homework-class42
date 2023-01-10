@@ -21,20 +21,20 @@ instead!
 3. Complete the unit test functions and verify that all is working as expected.
 -----------------------------------------------------------------------------*/
 const cartForParty = {
-  Beer: 1.75,
-  biscuits:  0.75,
-  chips: 0.50,
+  Water: 1.75,
+  biscuits: 0.75,
+  chips: 0.5,
   cake: 0.88,
-  croissants: 1.50,
+  croissants: 1.5,
   // TODO complete this object
 };
 
 function calculateTotalPrice(cartForParty) {
-  let total = 0 ;
-  for ( let value in cartForParty){
-    total += cartForParty[value];
+  let sum = 0;
+  for (const price in cartForParty) {
+    sum += cartForParty[price];
   }
-  return `Total: €` ${total};
+  return `Total: €${sum}`;
   // TODO replace this comment with your code
 }
 console.log(calculateTotalPrice);
@@ -42,11 +42,15 @@ console.log(calculateTotalPrice);
 // ! Test functions (plain vanilla JavaScript)
 function test1() {
   console.log('\nTest 1: calculateTotalPrice should take one parameter');
+  console.assert(calculateTotalPrice.length === 1);
   // TODO replace this comment with your code
 }
 
 function test2() {
   console.log('\nTest 2: return correct output when passed cartForParty');
+  const expected = `Total: €5.38`;
+  const actual = calculateTotalPrice(cartForParty);
+  console.assert(expected === actual);
   // TODO replace this comment with your code
 }
 
