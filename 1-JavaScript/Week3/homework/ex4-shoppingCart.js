@@ -34,7 +34,10 @@ if ( shoppingCart.length > 2) { return (shoppingCart.shift());
 return `You bought ${addToShoppingCart} !`;
   // TODO complete this function
 }
-addToShoppingCart()
+addToShoppingCart();
+addToShoppingCart(item);
+addToShoppingCart();
+
 
 // ! Test functions (plain vanilla JavaScript)
 function test1() {

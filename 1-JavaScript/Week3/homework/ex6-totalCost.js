@@ -21,11 +21,11 @@ instead!
 3. Complete the unit test functions and verify that all is working as expected.
 -----------------------------------------------------------------------------*/
 const cartForParty = {
-  Beer: 1.75
-  biscuits:  0.75
-  chips: 0.50
-  cake: 0.88
-  croissants: 1.50
+  Beer: 1.75,
+  biscuits:  0.75,
+  chips: 0.50,
+  cake: 0.88,
+  croissants: 1.50,
   // TODO complete this object
 };
 
