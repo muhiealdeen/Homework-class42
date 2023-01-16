@@ -31,18 +31,16 @@ const mondayTasks = [
 
 const hourlyRate = 25;
 
-function computeEarnings(mondayTasks, hourlyRate) {
-  let totalDuration = mondayTasks
-    .map((task) => mondayTasks.duration)
-    .reduce((total, currentValue) => total + currentValue, 0);
-  return `€'${totalDuration * hourlyRate}'`;
+function computeEarnings(taskDuration, rateDuration) {
 
-  //  const totalDuration = mondayTasks.filter(durationPerTas){
-  //   return mondayTasks.duration
-  //  };
-  //  totalDuration * hourlyRate
+  let totalDuration = taskDuration
+    .map(task => task.duration);
+   totalDuration = taskDuration.map(task => (task.duration / 60) * rateDuration)
+   .reduce((total, currentValue) => total + currentValue);
+  return `€${totalDuration.toFixed(2)}`;
+
 }
-
+ console.log(computeEarnings(mondayTasks, hourlyRate));
 // ! Unit tests (using Jest)
 describe('computeEarnings', () => {
   test('should take two parameters', () => {
