@@ -34,7 +34,7 @@ const hourlyRate = 25;
 function computeEarnings(mondayTasks, hourlyRate) {
   let totalDuration = mondayTasks
     .map((task) => mondayTasks.duration)
-    .reduce((total, currentValue) => total + currentValue[0]);
+    .reduce((total, currentValue) => total + currentValue, 0);
   return `€'${totalDuration * hourlyRate}'`;
 
   //  const totalDuration = mondayTasks.filter(durationPerTas){
