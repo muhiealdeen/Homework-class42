@@ -242,3 +242,544 @@ ex2-mondaysWorth.test.js:37:29 - Unknown word (accu)
 2023-01-16 09:41:15 info: -------------------------------------------------
 2023-01-16 09:41:15 info: >>> Running Unit Test `ex2-mondaysWorth.test` <<<
 2023-01-16 09:41:15 info: -------------------------------------------------
+2023-01-16 09:41:21 error: *** Unit Test Error Report ***
+
+Command failed: npx jest ex2-mondaysWorth.test.js --colors
+ FAIL  1-JavaScript/Week4/homework/ex2-mondaysWorth.test.js
+  computeEarnings
+    √ should take two parameters (3 ms)
+    × should compute the earnings as a formatted Euro amount
+
+  ● computeEarnings › should compute the earnings as a formatted Euro amount
+
+    TypeError: Cannot read properties of undefined (reading '0')
+
+      35 |   let totalDuration = mondayTasks
+      36 |     .map((task) => mondayTasks.duration)
+    > 37 |     .reduce((accu, curr) => accu + curr[0]);
+         |                                        ^
+      38 |   return `€'${totalDuration * hourlyRate}'`;
+      39 |
+      40 |   //  const totalDuration = mondayTasks.filter(durationPerTas){
+
+      at 1-JavaScript/Week4/homework/ex2-mondaysWorth.test.js:37:40
+          at Array.reduce (<anonymous>)
+      at reduce (1-JavaScript/Week4/homework/ex2-mondaysWorth.test.js:37:6)
+      at Object.computeEarnings (1-JavaScript/Week4/homework/ex2-mondaysWorth.test.js:55:20)
+
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 1 passed, 2 total
+Snapshots:   0 total
+Time:        1.419 s, estimated 3 s
+Ran all test suites matching /ex2-mondaysWorth.test.js/i.
+2023-01-16 09:41:26 error: *** ESLint Report ***
+
+ex2-mondaysWorth.test.js
+  35:7   warning  'totalDuration' is never reassigned. Use 'const' instead  no-autofix/prefer-const
+  36:11  error    'task' is defined but never used                          no-unused-vars
+  40:3   warning  Remove commented-out code                                 hyf/no-commented-out-code
+
+✖ 3 problems (1 error, 2 warnings)
+
+
+2023-01-16 09:41:31 error: *** Spell Checker Report ***
+
+ex2-mondaysWorth.test.js:37:14 - Unknown word (accu)
+ex2-mondaysWorth.test.js:37:29 - Unknown word (accu)
+
+2023-01-16 11:00:02 info: -------------------------------------------------
+2023-01-16 11:00:02 info: >>> Running Unit Test `ex3-lemonAllergy.test` <<<
+2023-01-16 11:00:02 info: -------------------------------------------------
+2023-01-16 11:00:08 error: *** Unit Test Error Report ***
+
+Command failed: npx jest ex3-lemonAllergy.test.js --colors
+ FAIL  1-JavaScript/Week4/homework/ex3-lemonAllergy.test.js
+  sanitizeFruitBasket
+    × should take two parameters (5 ms)
+    √ should not modify the original `fruitBasket` array (2 ms)
+    × should return a new array that does not include the unwanted `lemon` (2 ms)
+
+  ● sanitizeFruitBasket › should take two parameters
+
+    expect(received).toHaveLength(expected)
+
+    Expected length:   2
+    Received length:   0
+    Received function: [Function sanitizeFruitBasket]
+
+      34 | describe('sanitizeFruitBasket', () => {
+      35 |   test('should take two parameters', () => {
+    > 36 |     expect(sanitizeFruitBasket).toHaveLength(2);
+         |                                 ^
+      37 |   });
+      38 |
+      39 |   test('should not modify the original `fruitBasket` array', () => {
+
+      at Object.toHaveLength (1-JavaScript/Week4/homework/ex3-lemonAllergy.test.js:36:33)
+
+  ● sanitizeFruitBasket › should return a new array that does not include the unwanted `lemon`
+
+    expect(received).toEqual(expected) // deep equality
+
+    Expected: ["apple", "grapefruit", "banana", "watermelon"]
+    Received: undefined
+
+      46 |     const expected = ['apple', 'grapefruit', 'banana', 'watermelon'];
+      47 |     const result = sanitizeFruitBasket(fruitBasket, 'lemon');
+    > 48 |     expect(result).toEqual(expected);
+         |                    ^
+      49 |   });
+      50 | });
+      51 |
+
+      at Object.toEqual (1-JavaScript/Week4/homework/ex3-lemonAllergy.test.js:48:20)
+
+Test Suites: 1 failed, 1 total
+Tests:       2 failed, 1 passed, 3 total
+Snapshots:   0 total
+Time:        1.343 s, estimated 2 s
+Ran all test suites matching /ex3-lemonAllergy.test.js/i.
+2023-01-16 11:04:27 info: -------------------------------------------------
+2023-01-16 11:04:27 info: >>> Running Unit Test `ex3-lemonAllergy.test` <<<
+2023-01-16 11:04:27 info: -------------------------------------------------
+2023-01-16 11:04:32 error: *** Unit Test Error Report ***
+
+Command failed: npx jest ex3-lemonAllergy.test.js --colors
+ FAIL  1-JavaScript/Week4/homework/ex3-lemonAllergy.test.js
+  sanitizeFruitBasket
+    × should take two parameters (5 ms)
+    × should not modify the original `fruitBasket` array (3 ms)
+    × should return a new array that does not include the unwanted `lemon` (1 ms)
+
+  ● sanitizeFruitBasket › should take two parameters
+
+    expect(received).toHaveLength(expected)
+
+    Expected length:   2
+    Received length:   0
+    Received function: [Function sanitizeFruitBasket]
+
+      34 | describe('sanitizeFruitBasket', () => {
+      35 |   test('should take two parameters', () => {
+    > 36 |     expect(sanitizeFruitBasket).toHaveLength(2);
+         |                                 ^
+      37 |   });
+      38 |
+      39 |   test('should not modify the original `fruitBasket` array', () => {
+
+      at Object.toHaveLength (1-JavaScript/Week4/homework/ex3-lemonAllergy.test.js:36:33)
+
+  ● sanitizeFruitBasket › should not modify the original `fruitBasket` array
+
+    expect(received).toEqual(expected) // deep equality
+
+    Expected: undefined
+    Received: ["apple", "lemon", "grapefruit", "lemon", "banana", "watermelon", "lemon"]
+
+      41 |     const originalFruitBasketContents = [...fruitBasket];
+      42 |     const result = sanitizeFruitBasket(fruitBasket, 'lemon');
+    > 43 |     expect(fruitBasket).toEqual(result);
+         |                         ^
+      44 |   });
+      45 |
+      46 |   test('should return a new array that does not include the unwanted `lemon`', () => {
+
+      at Object.toEqual (1-JavaScript/Week4/homework/ex3-lemonAllergy.test.js:43:25)
+
+  ● sanitizeFruitBasket › should return a new array that does not include the unwanted `lemon`
+
+    expect(received).toEqual(expected) // deep equality
+
+    Expected: ["apple", "grapefruit", "banana", "watermelon"]
+    Received: undefined
+
+      47 |     const expected = ['apple', 'grapefruit', 'banana', 'watermelon'];
+      48 |     const result = sanitizeFruitBasket(fruitBasket, 'lemon');
+    > 49 |     expect(result).toEqual(expected);
+         |                    ^
+      50 |   });
+      51 | });
+      52 |
+
+      at Object.toEqual (1-JavaScript/Week4/homework/ex3-lemonAllergy.test.js:49:20)
+
+Test Suites: 1 failed, 1 total
+Tests:       3 failed, 3 total
+Snapshots:   0 total
+Time:        1.017 s, estimated 2 s
+Ran all test suites matching /ex3-lemonAllergy.test.js/i.
+2023-01-16 11:04:36 error: *** ESLint Report ***
+
+ex3-lemonAllergy.test.js
+  41:11  error  'originalFruitBasketContents' is assigned a value but never used  no-unused-vars
+
+✖ 1 problem (1 error, 0 warnings)
+
+
+2023-01-16 11:16:07 info: -------------------------------------------------
+2023-01-16 11:16:07 info: >>> Running Unit Test `ex3-lemonAllergy.test` <<<
+2023-01-16 11:16:07 info: -------------------------------------------------
+2023-01-16 11:16:13 error: *** Unit Test Error Report ***
+
+Command failed: npx jest ex3-lemonAllergy.test.js --colors
+ FAIL  1-JavaScript/Week4/homework/ex3-lemonAllergy.test.js
+  ● Test suite failed to run
+
+    Jest encountered an unexpected token
+
+    Jest failed to parse a file. This happens e.g. when your code or its dependencies use non-standard JavaScript syntax, or when Jest is not configured to support such syntax.
+
+    Out of the box Jest supports Babel, which will be used to transform your files into valid JS based on your Babel configuration.
+
+    By default "node_modules" folder is ignored by transformers.
+
+    Here's what you can do:
+     • If you are trying to use ECMAScript Modules, see https://jestjs.io/docs/ecmascript-modules for how to enable it.
+     • If you are trying to use TypeScript, see https://jestjs.io/docs/getting-started#using-typescript
+     • To have some of your "node_modules" files transformed, you can specify a custom "transformIgnorePatterns" in your config.
+     • If you need a custom transformation specify a "transform" option in your config.
+     • If you simply want to mock your non-JS modules (e.g. binary assets) you can stub them out with the "moduleNameMapper" config option.
+
+    You'll find more details and examples of these config options in the docs:
+    https://jestjs.io/docs/configuration
+    For information about custom transformations, see:
+    https://jestjs.io/docs/code-transformation
+
+    Details:
+
+    SyntaxError: C:\Users\Zezo1\hyf-html-exercises\Homework-class42\1-JavaScript\Week4\homework\ex3-lemonAllergy.test.js: Unexpected token (29:57)
+
+      27 |
+      28 | // ! Function under test
+    > 29 | function sanitizeFruitBasket(originalFruitBasketContents,'lemon') {
+         |                                                          ^
+      30 |   // fruitBasket.filter( fruit => fruit !== 'lemon');
+      31 | }
+      32 |
+
+      at Parser._raise (node_modules/@babel/parser/src/parser/error.js:147:45)
+      at Parser._raise [as raiseWithData] (node_modules/@babel/parser/src/parser/error.js:142:17)
+      at Parser.raiseWithData [as raise] (node_modules/@babel/parser/src/parser/error.js:91:17)
+      at Parser.raise [as unexpected] (node_modules/@babel/parser/src/parser/util.js:190:16)
+      at Parser.unexpected [as parseIdentifierName] (node_modules/@babel/parser/src/parser/expression.js:2556:18)
+      at Parser.parseIdentifierName [as parseIdentifier] (node_modules/@babel/parser/src/parser/expression.js:2536:23)
+      at Parser.parseIdentifier [as parseBindingAtom] (node_modules/@babel/parser/src/parser/lval.js:346:17)
+      at Parser.parseBindingAtom [as parseMaybeDefault] (node_modules/@babel/parser/src/parser/lval.js:417:25)
+      at Parser.parseMaybeDefault [as parseAssignableListItem] (node_modules/@babel/parser/src/parser/lval.js:393:23)
+      at Parser.parseAssignableListItem [as parseBindingList] (node_modules/@babel/parser/src/parser/lval.js:383:24)
+      at Parser.parseBindingList [as parseFunctionParams] (node_modules/@babel/parser/src/parser/statement.js:1229:24)
+      at Parser.parseFunctionParams [as parseFunction] (node_modules/@babel/parser/src/parser/statement.js:1193:10)
+      at Parser.parseFunction [as parseFunctionStatement] (node_modules/@babel/parser/src/parser/statement.js:654:17)
+      at Parser.parseFunctionStatement [as parseStatementContent] (node_modules/@babel/parser/src/parser/statement.js:280:21)
+      at Parser.parseStatementContent [as parseStatement] (node_modules/@babel/parser/src/parser/statement.js:243:17)
+      at Parser.parseStatement [as parseBlockOrModuleBlockBody] (node_modules/@babel/parser/src/parser/statement.js:979:25)
+      at Parser.parseBlockOrModuleBlockBody [as parseBlockBody] (node_modules/@babel/parser/src/parser/statement.js:955:10)
+      at Parser.parseBlockBody [as parseProgram] (node_modules/@babel/parser/src/parser/statement.js:130:10)
+      at Parser.parseProgram [as parseTopLevel] (node_modules/@babel/parser/src/parser/statement.js:115:25)
+      at Parser.parseTopLevel [as parse] (node_modules/@babel/parser/src/parser/index.js:41:10)
+      at parse (node_modules/@babel/parser/src/index.js:58:38)
+      at parser (node_modules/@babel/core/lib/parser/index.js:52:34)
+          at parser.next (<anonymous>)
+      at normalizeFile (node_modules/@babel/core/lib/transformation/normalize-file.js:87:38)
+          at normalizeFile.next (<anonymous>)
+      at run (node_modules/@babel/core/lib/transformation/index.js:29:50)
+          at run.next (<anonymous>)
+      at transform (node_modules/@babel/core/lib/transform.js:25:41)
+          at transform.next (<anonymous>)
+      at evaluateSync (node_modules/gensync/index.js:251:28)
+      at sync (node_modules/gensync/index.js:89:14)
+      at ScriptTransformer.transformSource (node_modules/@jest/transform/build/ScriptTransformer.js:615:31)
+      at ScriptTransformer._transformAndBuildScript (node_modules/@jest/transform/build/ScriptTransformer.js:757:40)
+      at ScriptTransformer.transform (node_modules/@jest/transform/build/ScriptTransformer.js:814:19)
+
+Test Suites: 1 failed, 1 total
+Tests:       0 total
+Snapshots:   0 total
+Time:        1.482 s
+Ran all test suites matching /ex3-lemonAllergy.test.js/i.
+2023-01-16 11:16:17 error: *** ESLint Report ***
+
+ex3-lemonAllergy.test.js
+  29:58  error  Parsing error: Unexpected token 'lemon'
+
+✖ 1 problem (1 error, 0 warnings)
+
+
+2023-01-16 11:20:03 info: -------------------------------------------------
+2023-01-16 11:20:03 info: >>> Running Unit Test `ex3-lemonAllergy.test` <<<
+2023-01-16 11:20:03 info: -------------------------------------------------
+2023-01-16 11:20:09 error: *** Unit Test Error Report ***
+
+Command failed: npx jest ex3-lemonAllergy.test.js --colors
+ FAIL  1-JavaScript/Week4/homework/ex3-lemonAllergy.test.js
+  sanitizeFruitBasket
+    × should take two parameters (8 ms)
+    × should not modify the original `fruitBasket` array (3 ms)
+    × should return a new array that does not include the unwanted `lemon` (1 ms)
+
+  ● sanitizeFruitBasket › should take two parameters
+
+    expect(received).toHaveLength(expected)
+
+    Expected length:   2
+    Received length:   1
+    Received function: [Function sanitizeFruitBasket]
+
+      37 | describe('sanitizeFruitBasket', () => {
+      38 |   test('should take two parameters', () => {
+    > 39 |     expect(sanitizeFruitBasket).toHaveLength(2);
+         |                                 ^
+      40 |   });
+      41 |
+      42 |   test('should not modify the original `fruitBasket` array', () => {
+
+      at Object.toHaveLength (1-JavaScript/Week4/homework/ex3-lemonAllergy.test.js:39:33)
+
+  ● sanitizeFruitBasket › should not modify the original `fruitBasket` array
+
+    expect(received).toEqual(expected) // deep equality
+
+    Expected: undefined
+    Received: ["apple", "lemon", "grapefruit", "lemon", "banana", "watermelon", "lemon"]
+
+      44 |     const originalFruitBasketContents = [...fruitBasket];
+      45 |     const result = sanitizeFruitBasket(fruitBasket, 'lemon');
+    > 46 |     expect(fruitBasket).toEqual(result);
+         |                         ^
+      47 |   });
+      48 |
+      49 |   test('should return a new array that does not include the unwanted `lemon`', () => {
+
+      at Object.toEqual (1-JavaScript/Week4/homework/ex3-lemonAllergy.test.js:46:25)
+
+  ● sanitizeFruitBasket › should return a new array that does not include the unwanted `lemon`
+
+    expect(received).toEqual(expected) // deep equality
+
+    Expected: ["apple", "grapefruit", "banana", "watermelon"]
+    Received: undefined
+
+      50 |     const expected = ['apple', 'grapefruit', 'banana', 'watermelon'];
+      51 |     const result = sanitizeFruitBasket(fruitBasket, 'lemon');
+    > 52 |     expect(result).toEqual(expected);
+         |                    ^
+      53 |   });
+      54 | });
+      55 |
+
+      at Object.toEqual (1-JavaScript/Week4/homework/ex3-lemonAllergy.test.js:52:20)
+
+Test Suites: 1 failed, 1 total
+Tests:       3 failed, 3 total
+Snapshots:   0 total
+Time:        1.341 s
+Ran all test suites matching /ex3-lemonAllergy.test.js/i.
+2023-01-16 11:20:13 error: *** ESLint Report ***
+
+ex3-lemonAllergy.test.js
+  31:3   error    'toBeTakenOut' is assigned a value but never used                 no-unused-vars
+  33:3   warning  Remove commented-out code                                         hyf/no-commented-out-code
+  44:11  error    'originalFruitBasketContents' is assigned a value but never used  no-unused-vars
+
+✖ 3 problems (2 errors, 1 warning)
+
+
+2023-01-16 11:25:02 info: -------------------------------------------------
+2023-01-16 11:25:02 info: >>> Running Unit Test `ex3-lemonAllergy.test` <<<
+2023-01-16 11:25:02 info: -------------------------------------------------
+2023-01-16 11:25:08 error: *** Unit Test Error Report ***
+
+Command failed: npx jest ex3-lemonAllergy.test.js --colors
+ FAIL  1-JavaScript/Week4/homework/ex3-lemonAllergy.test.js
+  sanitizeFruitBasket
+    √ should take two parameters (4 ms)
+    × should not modify the original `fruitBasket` array (7 ms)
+    × should return a new array that does not include the unwanted `lemon` (2 ms)
+
+  ● sanitizeFruitBasket › should not modify the original `fruitBasket` array
+
+    expect(received).toEqual(expected) // deep equality
+
+    Expected: undefined
+    Received: ["apple", "lemon", "grapefruit", "lemon", "banana", "watermelon", "lemon"]
+
+      41 |     // Save the original contents of the fruit basket
+      42 |     const originalFruitBasketContents = [...fruitBasket];
+    > 43 |     expect(fruitBasket).toEqual(result);
+         |                         ^
+      44 |   });
+      45 |
+      46 |   test('should return a new array that does not include the unwanted `lemon`', () => {
+
+      at Object.toEqual (1-JavaScript/Week4/homework/ex3-lemonAllergy.test.js:43:25)
+
+  ● sanitizeFruitBasket › should return a new array that does not include the unwanted `lemon`
+
+    expect(received).toEqual(expected) // deep equality
+
+    Expected: ["apple", "grapefruit", "banana", "watermelon"]
+    Received: undefined
+
+      46 |   test('should return a new array that does not include the unwanted `lemon`', () => {
+      47 |     const expected = ['apple', 'grapefruit', 'banana', 'watermelon'];
+    > 48 |     expect(result).toEqual(expected);
+         |                    ^
+      49 |   });
+      50 | });
+      51 |
+
+      at Object.toEqual (1-JavaScript/Week4/homework/ex3-lemonAllergy.test.js:48:20)
+
+Test Suites: 1 failed, 1 total
+Tests:       2 failed, 1 passed, 3 total
+Snapshots:   0 total
+Time:        1.296 s, estimated 2 s
+Ran all test suites matching /ex3-lemonAllergy.test.js/i.
+2023-01-16 11:25:12 error: *** ESLint Report ***
+
+ex3-lemonAllergy.test.js
+  29:30  error    'originalFruitBasketContents' is defined but never used           no-unused-vars
+  29:59  error    'toBeTakenOut' is defined but never used                          no-unused-vars
+  30:3   warning  Remove commented-out code                                         hyf/no-commented-out-code
+  42:11  error    'originalFruitBasketContents' is assigned a value but never used  no-unused-vars
+
+✖ 4 problems (3 errors, 1 warning)
+
+
+2023-01-16 11:28:53 info: -------------------------------------------------
+2023-01-16 11:28:53 info: >>> Running Unit Test `ex3-lemonAllergy.test` <<<
+2023-01-16 11:28:53 info: -------------------------------------------------
+2023-01-16 11:28:58 error: *** Unit Test Error Report ***
+
+Command failed: npx jest ex3-lemonAllergy.test.js --colors
+ FAIL  1-JavaScript/Week4/homework/ex3-lemonAllergy.test.js
+  sanitizeFruitBasket
+    √ should take two parameters (3 ms)
+    × should not modify the original `fruitBasket` array (6 ms)
+    × should return a new array that does not include the unwanted `lemon` (2 ms)
+
+  ● sanitizeFruitBasket › should not modify the original `fruitBasket` array
+
+    expect(received).toEqual(expected) // deep equality
+
+    Expected: undefined
+    Received: ["apple", "lemon", "grapefruit", "lemon", "banana", "watermelon", "lemon"]
+
+      41 |     // Save the original contents of the fruit basket
+      42 |     const originalFruitBasketContents = [...fruitBasket];
+    > 43 |     expect(fruitBasket).toEqual(result);
+         |                         ^
+      44 |   });
+      45 |
+      46 |   test('should return a new array that does not include the unwanted `lemon`', () => {
+
+      at Object.toEqual (1-JavaScript/Week4/homework/ex3-lemonAllergy.test.js:43:25)
+
+  ● sanitizeFruitBasket › should return a new array that does not include the unwanted `lemon`
+
+    expect(received).toEqual(expected) // deep equality
+
+    Expected: ["apple", "grapefruit", "banana", "watermelon"]
+    Received: undefined
+
+      46 |   test('should return a new array that does not include the unwanted `lemon`', () => {
+      47 |     const expected = ['apple', 'grapefruit', 'banana', 'watermelon'];
+    > 48 |     expect(result).toEqual(expected);
+         |                    ^
+      49 |   });
+      50 | });
+      51 |
+
+      at Object.toEqual (1-JavaScript/Week4/homework/ex3-lemonAllergy.test.js:48:20)
+
+Test Suites: 1 failed, 1 total
+Tests:       2 failed, 1 passed, 3 total
+Snapshots:   0 total
+Time:        1.351 s, estimated 2 s
+Ran all test suites matching /ex3-lemonAllergy.test.js/i.
+2023-01-16 11:29:03 error: *** ESLint Report ***
+
+ex3-lemonAllergy.test.js
+  29:30  error  'originalFruitBasketContents' is defined but never used           no-unused-vars
+  29:59  error  'toBeTakenOut' is defined but never used                          no-unused-vars
+  42:11  error  'originalFruitBasketContents' is assigned a value but never used  no-unused-vars
+
+✖ 3 problems (3 errors, 0 warnings)
+
+
+2023-01-16 11:37:32 info: -------------------------------------------------
+2023-01-16 11:37:32 info: >>> Running Unit Test `ex3-lemonAllergy.test` <<<
+2023-01-16 11:37:32 info: -------------------------------------------------
+2023-01-16 11:37:36 error: *** Unit Test Error Report ***
+
+Command failed: npx jest ex3-lemonAllergy.test.js --colors
+ FAIL  1-JavaScript/Week4/homework/ex3-lemonAllergy.test.js
+  ● Test suite failed to run
+
+    ReferenceError: originalFruitBasketContents is not defined
+
+      30 |   fruitBasket.filter((fruit) => fruit !== 'lemon');
+      31 | }
+    > 32 | const result = sanitizeFruitBasket(originalFruitBasketContents, 'lemon');
+         |                                    ^
+      33 |
+      34 | // ! Unit tests (using Jest)
+      35 | describe('sanitizeFruitBasket', () => {
+
+      at Object.originalFruitBasketContents (1-JavaScript/Week4/homework/ex3-lemonAllergy.test.js:32:36)
+
+Test Suites: 1 failed, 1 total
+Tests:       0 total
+Snapshots:   0 total
+Time:        0.972 s, estimated 2 s
+Ran all test suites matching /ex3-lemonAllergy.test.js/i.
+2023-01-16 11:37:40 error: *** ESLint Report ***
+
+ex3-lemonAllergy.test.js
+  29:30  error  'originalFruitBasketContents' is defined but never used           no-unused-vars
+  29:59  error  'toBeTakenOut' is defined but never used                          no-unused-vars
+  32:36  error  'originalFruitBasketContents' is not defined                      no-undef
+  42:11  error  'originalFruitBasketContents' is assigned a value but never used  no-unused-vars
+
+✖ 4 problems (4 errors, 0 warnings)
+
+
+2023-01-16 11:40:24 info: -------------------------------------------------
+2023-01-16 11:40:24 info: >>> Running Unit Test `ex3-lemonAllergy.test` <<<
+2023-01-16 11:40:24 info: -------------------------------------------------
+2023-01-16 11:40:31 error: *** Unit Test Error Report ***
+
+Command failed: npx jest ex3-lemonAllergy.test.js --colors
+ FAIL  1-JavaScript/Week4/homework/ex3-lemonAllergy.test.js
+  ● Test suite failed to run
+
+    ReferenceError: originalFruitBasketContents is not defined
+
+      30 |   originalFruitBasketContents.filter((fruit) => fruit !== 'lemon');
+      31 | }
+    > 32 | const result = sanitizeFruitBasket(originalFruitBasketContents, 'lemon');
+         |                                    ^
+      33 |
+      34 | // ! Unit tests (using Jest)
+      35 | describe('sanitizeFruitBasket', () => {
+
+      at Object.originalFruitBasketContents (1-JavaScript/Week4/homework/ex3-lemonAllergy.test.js:32:36)
+
+Test Suites: 1 failed, 1 total
+Tests:       0 total
+Snapshots:   0 total
+Time:        1.386 s
+Ran all test suites matching /ex3-lemonAllergy.test.js/i.
+2023-01-16 11:40:34 error: *** ESLint Report ***
+
+ex3-lemonAllergy.test.js
+  29:59  error  'toBeTakenOut' is defined but never used                          no-unused-vars
+  32:36  error  'originalFruitBasketContents' is not defined                      no-undef
+  42:11  error  'originalFruitBasketContents' is assigned a value but never used  no-unused-vars
+
+✖ 3 problems (3 errors, 0 warnings)
+
+
+2023-01-16 11:42:05 info: -------------------------------------------------
+2023-01-16 11:42:05 info: >>> Running Unit Test `ex3-lemonAllergy.test` <<<
+2023-01-16 11:42:05 info: -------------------------------------------------
