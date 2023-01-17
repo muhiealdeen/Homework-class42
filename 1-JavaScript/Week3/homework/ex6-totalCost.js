@@ -21,7 +21,7 @@ instead!
 3. Complete the unit test functions and verify that all is working as expected.
 -----------------------------------------------------------------------------*/
 const cartForParty = {
-  Water: 1.75,
+  water: 1.75,
   biscuits: 0.75,
   chips: 0.5,
   cake: 0.88,
