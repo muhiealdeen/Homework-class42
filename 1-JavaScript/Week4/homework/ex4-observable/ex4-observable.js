@@ -20,10 +20,10 @@ function createObservable() {
       subscribers.push(subscriber);
     },
     notify: function (message) {
-    subscribers.forEach(() => console.log(message));
+    subscribers.forEach((subscriber) => subscriber (message));
     },
   };
-}
+}add
 
 // ! Do not change or remove the code below
 module.exports = createObservable;
