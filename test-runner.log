@@ -783,3 +783,433 @@ ex3-lemonAllergy.test.js
 2023-01-16 11:42:05 info: -------------------------------------------------
 2023-01-16 11:42:05 info: >>> Running Unit Test `ex3-lemonAllergy.test` <<<
 2023-01-16 11:42:05 info: -------------------------------------------------
+2023-01-16 11:42:11 error: *** Unit Test Error Report ***
+
+Command failed: npx jest ex3-lemonAllergy.test.js --colors
+ FAIL  1-JavaScript/Week4/homework/ex3-lemonAllergy.test.js
+  sanitizeFruitBasket
+    √ should take two parameters (3 ms)
+    × should not modify the original `fruitBasket` array (7 ms)
+    × should return a new array that does not include the unwanted `lemon` (2 ms)
+
+  ● sanitizeFruitBasket › should not modify the original `fruitBasket` array
+
+    expect(received).toEqual(expected) // deep equality
+
+    Expected: undefined
+    Received: ["apple", "lemon", "grapefruit", "lemon", "banana", "watermelon", "lemon"]
+
+      42 |     // Save the original contents of the fruit basket
+      43 |     const originalFruitBasketContents = [...fruitBasket];
+    > 44 |     expect(fruitBasket).toEqual(result);
+         |                         ^
+      45 |   });
+      46 |
+      47 |   test('should return a new array that does not include the unwanted `lemon`', () => {
+
+      at Object.toEqual (1-JavaScript/Week4/homework/ex3-lemonAllergy.test.js:44:25)
+
+  ● sanitizeFruitBasket › should return a new array that does not include the unwanted `lemon`
+
+    expect(received).toEqual(expected) // deep equality
+
+    Expected: ["apple", "grapefruit", "banana", "watermelon"]
+    Received: undefined
+
+      47 |   test('should return a new array that does not include the unwanted `lemon`', () => {
+      48 |     const expected = ['apple', 'grapefruit', 'banana', 'watermelon'];
+    > 49 |     expect(result).toEqual(expected);
+         |                    ^
+      50 |   });
+      51 | });
+      52 |
+
+      at Object.toEqual (1-JavaScript/Week4/homework/ex3-lemonAllergy.test.js:49:20)
+
+Test Suites: 1 failed, 1 total
+Tests:       2 failed, 1 passed, 3 total
+Snapshots:   0 total
+Time:        1.321 s
+Ran all test suites matching /ex3-lemonAllergy.test.js/i.
+2023-01-16 11:42:15 error: *** ESLint Report ***
+
+ex3-lemonAllergy.test.js
+  30:59  error  'toBeTakenOut' is defined but never used                          no-unused-vars
+  43:11  error  'originalFruitBasketContents' is assigned a value but never used  no-unused-vars
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+2023-01-16 02:35:48 info: -------------------------------------------------
+2023-01-16 02:35:48 info: >>> Running Unit Test `ex3-lemonAllergy.test` <<<
+2023-01-16 02:35:48 info: -------------------------------------------------
+2023-01-16 02:36:00 error: *** Unit Test Error Report ***
+
+Command failed: npx jest ex3-lemonAllergy.test.js --colors
+ FAIL  1-JavaScript/Week4/homework/ex3-lemonAllergy.test.js
+  sanitizeFruitBasket
+    √ should take two parameters (2 ms)
+    × should not modify the original `fruitBasket` array (5 ms)
+    × should return a new array that does not include the unwanted `lemon` (1 ms)
+
+  ● sanitizeFruitBasket › should not modify the original `fruitBasket` array
+
+    expect(received).toEqual(expected) // deep equality
+
+    Expected: undefined
+    Received: ["apple", "lemon", "grapefruit", "lemon", "banana", "watermelon", "lemon"]
+
+      42 |     const originalFruitBasketContents = [...fruitBasket];
+      43 |     const result = sanitizeFruitBasket(fruitBasket, 'lemon');
+    > 44 |     expect(fruitBasket).toEqual(result);
+         |                         ^
+      45 |   });
+      46 |
+      47 |   test('should return a new array that does not include the unwanted `lemon`', () => {
+
+      at Object.toEqual (1-JavaScript/Week4/homework/ex3-lemonAllergy.test.js:44:25)
+
+  ● sanitizeFruitBasket › should return a new array that does not include the unwanted `lemon`
+
+    expect(received).toEqual(expected) // deep equality
+
+    Expected: ["apple", "grapefruit", "banana", "watermelon"]
+    Received: undefined
+
+      48 |     const expected = ['apple', 'grapefruit', 'banana', 'watermelon'];
+      49 |     const result = sanitizeFruitBasket(fruitBasket, 'lemon');
+    > 50 |     expect(result).toEqual(expected);
+         |                    ^
+      51 |   });
+      52 | });
+      53 |
+
+      at Object.toEqual (1-JavaScript/Week4/homework/ex3-lemonAllergy.test.js:50:20)
+
+Test Suites: 1 failed, 1 total
+Tests:       2 failed, 1 passed, 3 total
+Snapshots:   0 total
+Time:        1.622 s, estimated 2 s
+Ran all test suites matching /ex3-lemonAllergy.test.js/i.
+2023-01-16 02:36:04 error: *** ESLint Report ***
+
+ex3-lemonAllergy.test.js
+  29:30  error  'originalFruitBasketContents' is defined but never used           no-unused-vars
+  29:59  error  'toBeTakenOut' is defined but never used                          no-unused-vars
+  32:7   error  'result' is assigned a value but never used                       no-unused-vars
+  42:11  error  'originalFruitBasketContents' is assigned a value but never used  no-unused-vars
+
+✖ 4 problems (4 errors, 0 warnings)
+
+
+2023-01-16 04:52:20 info: ------------------------------------------
+2023-01-16 04:52:20 info: >>> Running Unit Test `ex4-observable` <<<
+2023-01-16 04:52:20 info: ------------------------------------------
+2023-01-16 04:52:26 error: *** Unit Test Error Report ***
+
+console.log
+    Hi!
+
+      at log (1-JavaScript/Week4/homework/ex4-observable/ex4-observable.js:23:39)
+          at Array.forEach (<anonymous>)
+
+  console.log
+    Hi!
+
+      at log (1-JavaScript/Week4/homework/ex4-observable/ex4-observable.js:23:39)
+          at Array.forEach (<anonymous>)
+
+
+
+Command failed: npx jest ex4-observable.test.js --colors
+ FAIL  1-JavaScript/Week4/homework/ex4-observable/ex4-observable.test.js
+  createObservable
+    √ should exist and be a function (3 ms)
+    √ should return an object with `subscribe` and a `notify` function properties
+    × should notify all subscribers of any notification (39 ms)
+
+  ● createObservable › should notify all subscribers of any notification
+
+    expect(jest.fn()).toHaveBeenCalledWith(...expected)
+
+    Expected: "Hi!"
+
+    Number of calls: 0
+
+      28 |
+      29 |     // Assert that both listeners have been called with the Hi! message
+    > 30 |     expect(listener1).toHaveBeenCalledWith('Hi!');
+         |                       ^
+      31 |     expect(listener2).toHaveBeenCalledWith('Hi!');
+      32 |   });
+      33 | });
+
+      at Object.toHaveBeenCalledWith (1-JavaScript/Week4/homework/ex4-observable/ex4-observable.test.js:30:23)
+
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 2 passed, 3 total
+Snapshots:   0 total
+Time:        1.321 s
+Ran all test suites matching /ex4-observable.test.js/i.
+2023-01-16 05:06:26 info: ------------------------------------------------------
+2023-01-16 05:06:26 info: >>> Running Unit Test `ex1-doubleEvenNumbers.test` <<<
+2023-01-16 05:06:26 info: ------------------------------------------------------
+2023-01-16 05:06:36 info: All unit tests passed.
+2023-01-16 05:07:01 info: All steps were completed successfully
+2023-01-16 05:42:05 info: -------------------------------------------------
+2023-01-16 05:42:05 info: >>> Running Unit Test `ex2-mondaysWorth.test` <<<
+2023-01-16 05:42:05 info: -------------------------------------------------
+2023-01-16 05:42:13 info: All unit tests passed.
+2023-01-16 05:42:40 info: All steps were completed successfully
+2023-01-16 08:06:24 info: ------------------------------------------
+2023-01-16 08:06:24 info: >>> Running Unit Test `ex4-observable` <<<
+2023-01-16 08:06:24 info: ------------------------------------------
+2023-01-16 08:06:38 error: *** Unit Test Error Report ***
+
+console.log
+    Hi!
+
+      at log (1-JavaScript/Week4/homework/ex4-observable/ex4-observable.js:23:39)
+          at Array.forEach (<anonymous>)
+
+  console.log
+    Hi!
+
+      at log (1-JavaScript/Week4/homework/ex4-observable/ex4-observable.js:23:39)
+          at Array.forEach (<anonymous>)
+
+
+
+Command failed: npx jest ex4-observable.test.js --colors
+ FAIL  1-JavaScript/Week4/homework/ex4-observable/ex4-observable.test.js
+  createObservable
+    √ should exist and be a function (3 ms)
+    √ should return an object with `subscribe` and a `notify` function properties (1 ms)
+    × should notify all subscribers of any notification (172 ms)
+
+  ● createObservable › should notify all subscribers of any notification
+
+    expect(jest.fn()).toHaveBeenCalledWith(...expected)
+
+    Expected: "Hi!"
+
+    Number of calls: 0
+
+      28 |
+      29 |     // Assert that both listeners have been called with the Hi! message
+    > 30 |     expect(listener1).toHaveBeenCalledWith('Hi!');
+         |                       ^
+      31 |     expect(listener2).toHaveBeenCalledWith('Hi!');
+      32 |   });
+      33 | });
+
+      at Object.toHaveBeenCalledWith (1-JavaScript/Week4/homework/ex4-observable/ex4-observable.test.js:30:23)
+
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 2 passed, 3 total
+Snapshots:   0 total
+Time:        4.626 s
+Ran all test suites matching /ex4-observable.test.js/i.
+2023-01-16 08:09:29 info: ------------------------------------------
+2023-01-16 08:09:29 info: >>> Running Unit Test `ex4-observable` <<<
+2023-01-16 08:09:29 info: ------------------------------------------
+2023-01-16 08:09:36 info: All unit tests passed.
+2023-01-16 08:09:58 info: All steps were completed successfully
+2023-01-16 08:45:30 info: -------------------------------------------------
+2023-01-16 08:45:30 info: >>> Running Unit Test `ex3-lemonAllergy.test` <<<
+2023-01-16 08:45:30 info: -------------------------------------------------
+2023-01-16 08:45:47 error: *** Unit Test Error Report ***
+
+Command failed: npx jest ex3-lemonAllergy.test.js --colors
+ FAIL  1-JavaScript/Week4/homework/ex3-lemonAllergy.test.js
+  sanitizeFruitBasket
+    √ should take two parameters (10 ms)
+    × should not modify the original `fruitBasket` array (104 ms)
+    √ should return a new array that does not include the unwanted `lemon` (6 ms)
+
+  ● sanitizeFruitBasket › should not modify the original `fruitBasket` array
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 0
+    + Received  + 3
+
+      Array [
+        "apple",
+    +   "lemon",
+        "grapefruit",
+    +   "lemon",
+        "banana",
+        "watermelon",
+    +   "lemon",
+      ]
+
+      43 |     const originalFruitBasketContents = [...fruitBasket];
+      44 |     const result = sanitizeFruitBasket(fruitBasket, 'lemon');
+    > 45 |     expect(fruitBasket).toEqual(result);
+         |                         ^
+      46 |   });
+      47 |
+      48 |   test('should return a new array that does not include the unwanted `lemon`', () => {
+
+      at Object.toEqual (1-JavaScript/Week4/homework/ex3-lemonAllergy.test.js:45:25)
+
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 2 passed, 3 total
+Snapshots:   0 total
+Time:        4.892 s
+Ran all test suites matching /ex3-lemonAllergy.test.js/i.
+2023-01-16 08:45:55 error: *** ESLint Report ***
+
+ex3-lemonAllergy.test.js
+  29:50  error  'toBeTakenOut' is defined but never used                          no-unused-vars
+  43:11  error  'originalFruitBasketContents' is assigned a value but never used  no-unused-vars
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+2023-01-16 08:51:07 info: -------------------------------------------------
+2023-01-16 08:51:07 info: >>> Running Unit Test `ex3-lemonAllergy.test` <<<
+2023-01-16 08:51:07 info: -------------------------------------------------
+2023-01-16 08:51:16 info: All unit tests passed.
+2023-01-16 08:51:23 error: *** ESLint Report ***
+
+ex3-lemonAllergy.test.js
+  29:50  error  'toBeTakenOut' is defined but never used  no-unused-vars
+
+✖ 1 problem (1 error, 0 warnings)
+
+
+2023-01-16 11:20:46 info: --------------------------------------
+2023-01-16 11:20:46 info: >>> Running Unit Test `ex5-wallet` <<<
+2023-01-16 11:20:46 info: --------------------------------------
+2023-01-16 11:21:01 error: *** Unit Test Error Report ***
+
+✕ wallet q1: At line 26, which variables are in the scope marked Closure?
+✕ wallet q2: What is in the Call Stack, from top to bottom?
+✕ wallet q3: What tooltip appears when hovering over the third debug button?
+✕ wallet q4: What is displayed in the console?
+✕ wallet q5: The owner of the wallet with insufficient funds is?
+
+
+Command failed: npx jest ex5-wallet.test.js --colors --reporters="C:\Users\Zezo1\hyf-html-exercises\Homework-class42\test-runner\CustomReporter.js"
+2023-01-16 11:21:13 error: *** ESLint Report ***
+
+ex5-wallet/index.js
+   80:13  error  'b' is not defined  no-undef
+   89:13  error  'c' is not defined  no-undef
+   98:12  error  'a' is not defined  no-undef
+  107:13  error  'a' is not defined  no-undef
+  116:13  error  'c' is not defined  no-undef
+
+✖ 5 problems (5 errors, 0 warnings)
+
+
+2023-01-17 11:02:23 info: --------------------------------------
+2023-01-17 11:02:23 info: >>> Running Unit Test `ex5-wallet` <<<
+2023-01-17 11:02:23 info: --------------------------------------
+2023-01-17 11:02:44 error: *** Unit Test Error Report ***
+
+✕ wallet q1: At line 26, which variables are in the scope marked Closure?
+✕ wallet q2: What is in the Call Stack, from top to bottom?
+✕ wallet q3: What tooltip appears when hovering over the third debug button?
+✕ wallet q4: What is displayed in the console?
+✕ wallet q5: The owner of the wallet with insufficient funds is?
+
+
+Command failed: npx jest ex5-wallet.test.js --colors --reporters="C:\Users\Zezo1\hyf-html-exercises\Homework-class42\test-runner\CustomReporter.js"
+2023-01-17 11:03:06 error: *** Spell Checker Report ***
+
+
+2023-01-17 12:01:10 info: --------------------------------------
+2023-01-17 12:01:10 info: >>> Running Unit Test `ex5-wallet` <<<
+2023-01-17 12:01:10 info: --------------------------------------
+2023-01-17 12:01:15 error: *** Unit Test Error Report ***
+
+✕ wallet q1: At line 26, which variables are in the scope marked Closure?
+✕ wallet q2: What is in the Call Stack, from top to bottom?
+✕ wallet q3: What tooltip appears when hovering over the third debug button?
+✕ wallet q4: What is displayed in the console?
+✕ wallet q5: The owner of the wallet with insufficient funds is?
+
+
+Command failed: npx jest ex5-wallet.test.js --colors --reporters="C:\Users\Zezo1\hyf-html-exercises\Homework-class42\test-runner\CustomReporter.js"
+2023-01-17 12:01:26 error: *** ESLint Report ***
+
+ex5-wallet/index.js
+   80:12  error  'c' is not defined  no-undef
+   89:12  error  'a' is not defined  no-undef
+   98:12  error  'c' is not defined  no-undef
+  107:13  error  'a' is not defined  no-undef
+  116:13  error  'b' is not defined  no-undef
+
+✖ 5 problems (5 errors, 0 warnings)
+
+
+2023-01-17 12:04:20 info: --------------------------------------
+2023-01-17 12:04:20 info: >>> Running Unit Test `ex5-wallet` <<<
+2023-01-17 12:04:20 info: --------------------------------------
+2023-01-17 12:04:28 error: *** Unit Test Error Report ***
+
+✕ wallet q1: At line 26, which variables are in the scope marked Closure?
+✕ wallet q2: What is in the Call Stack, from top to bottom?
+✕ wallet q3: What tooltip appears when hovering over the third debug button?
+✕ wallet q4: What is displayed in the console?
+✕ wallet q5: The owner of the wallet with insufficient funds is?
+
+
+Command failed: npx jest ex5-wallet.test.js --colors --reporters="C:\Users\Zezo1\hyf-html-exercises\Homework-class42\test-runner\CustomReporter.js"
+2023-01-17 12:04:35 error: *** ESLint Report ***
+
+ex5-wallet/index.js
+   80:12  error  'c' is not defined  no-undef
+   89:12  error  'a' is not defined  no-undef
+   98:12  error  'c' is not defined  no-undef
+  107:13  error  'a' is not defined  no-undef
+  116:13  error  'b' is not defined  no-undef
+
+✖ 5 problems (5 errors, 0 warnings)
+
+
+2023-01-17 12:07:01 info: --------------------------------------
+2023-01-17 12:07:01 info: >>> Running Unit Test `ex5-wallet` <<<
+2023-01-17 12:07:01 info: --------------------------------------
+2023-01-17 12:07:05 error: *** Unit Test Error Report ***
+
+✕ wallet q1: At line 26, which variables are in the scope marked Closure?
+✕ wallet q2: What is in the Call Stack, from top to bottom?
+✕ wallet q3: What tooltip appears when hovering over the third debug button?
+✕ wallet q4: What is displayed in the console?
+✕ wallet q5: The owner of the wallet with insufficient funds is?
+
+
+Command failed: npx jest ex5-wallet.test.js --colors --reporters="C:\Users\Zezo1\hyf-html-exercises\Homework-class42\test-runner\CustomReporter.js"
+2023-01-17 12:07:09 error: *** ESLint Report ***
+
+ex5-wallet/index.js
+   80:12  error  'a' is not defined  no-undef
+   89:12  error  'b' is not defined  no-undef
+   98:12  error  'b' is not defined  no-undef
+  107:13  error  'c' is not defined  no-undef
+  116:13  error  'a' is not defined  no-undef
+
+✖ 5 problems (5 errors, 0 warnings)
+
+
+2023-01-17 12:11:38 info: --------------------------------------
+2023-01-17 12:11:38 info: >>> Running Unit Test `ex5-wallet` <<<
+2023-01-17 12:11:38 info: --------------------------------------
+2023-01-17 12:11:43 info: All unit tests passed.
+2023-01-17 12:11:50 info: All steps were completed successfully
+2023-01-17 01:05:21 info: -------------------------------------------------
+2023-01-17 01:05:21 info: >>> Running Unit Test `ex3-lemonAllergy.test` <<<
+2023-01-17 01:05:21 info: -------------------------------------------------
+2023-01-17 01:05:26 info: All unit tests passed.
+2023-01-17 01:05:30 error: *** ESLint Report ***
+
+ex3-lemonAllergy.test.js
+  29:50  error  'toBeTakenOut' is defined but never used  no-unused-vars
+
+✖ 1 problem (1 error, 0 warnings)
+
+
