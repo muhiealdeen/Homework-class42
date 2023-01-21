@@ -33,33 +33,38 @@ body, this code is now written once only in a separated function.
 
 // This function should take an array as its parameter and return
 // a randomly selected element as its return value.
-function selectRandomly( arr = []) {
-  // TODO complete this function
-  return arr[Math.floor(Math.random() * arr.length )];
+function selectRandomly(arr) {
+  return arr[Math.floor(Math.random() * arr.length)];
 }
-selectRandomly()
+function tellFortune(arr1, arr2, arr3, arr4) {
+  const randomlySelectedJobTitle = selectRandomly(arr1);
+  const randomlySelectedLocation = selectRandomly(arr2);
+  const randomlySelectedPartnerName = selectRandomly(arr3);
+  const randomlySelectedNumKids = selectRandomly(arr4);
 
-  function tellFortune( arr1, arr2, arr3, arr4) {
-   return  `You will be a ${selectRandomly(arr1)} in ${selectRandomly(arr2)} married to ${selectRandomly(arr3)} with ${selectRandomly(arr4)} kids` ;
-  // TODO complete this function
+  return `You will be a ${randomlySelectedJobTitle} in ${randomlySelectedLocation} married to ${randomlySelectedPartnerName} with ${randomlySelectedNumKids} kids`;
 }
 // tellFortune( jobTitles, locations, partnerNames, numKids)
 
 function main() {
-  const numKids = [1, 2, 3 ,4, 5 
-    // TODO add elements here
+  const numKids = [1, 2, 3, 4, 5];
+
+  const partnerNames = [' Naadiya ', 'Reem', ' Natalia', ' Alisa', ' Fairoz'];
+
+  const locations = [
+    ' Damascus',
+    'Amsterdam',
+    'Aleppo',
+    ' Roterdam',
+    'Utrecht',
   ];
 
-  const partnerNames = [' Naadiya ', 'Reem', ' Natalia', ' Alisa', ' Fairoz'
-    // TODO add elements here
-  ];
-
-  const locations = [' Damascus', 'Amsterdam', 'Aleppo' ,' Roterdam' , 'Utrecht'
-  // TODO add elements here'
-  ];
-
-  const jobTitles = [' Lawyer', 'Web developer', 'Web designer', 'accountant', ' Musician'
-    // TODO add elements here
+  const jobTitles = [
+    ' Lawyer',
+    'Web developer',
+    'Web designer',
+    'accountant',
+    ' Musician',
   ];
 
   console.log(tellFortune(jobTitles, locations, partnerNames, numKids));

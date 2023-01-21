@@ -19,19 +19,30 @@ Full description at: https://github.com/HackYourFuture/Homework/tree/main/1-Java
    `giveCompliment` function to the console.
 -----------------------------------------------------------------------------*/
 function giveCompliment(name) {
-  let compliments = ['awesome' , 'great', 'nice','inspiring' ,'breathtaking' , 'amazing' , 'astonishing' , 'smart' , 'intelligent' , ' brilliant'];
-  // TODO complete this function
-  // console.log( 'You are' + ' ' + compliments[Math.floor(Math.random() * compliments.length)] +' '+ name);
-  return `You are ${compliments[Math.floor(Math.random() * compliments.length)]}, ${name}!`;
+  let compliments = [
+    'awesome',
+    'great',
+    'nice',
+    'inspiring',
+    'breathtaking',
+    'amazing',
+    'astonishing',
+    'smart',
+    'intelligent',
+    ' brilliant',
+  ];
+  const randomCompliment = getRandomCompliment(compliments);
+  return `you are ${randomCompliment}, ${name}`;
+}
+function getRandomCompliment(compliments) {
+  return compliments[Math.floor(Math.random() * compliments.length)];
 }
 
-giveCompliment('muhie')
+giveCompliment('muhie');
 
 function main() {
-  // TODO substitute your own name for "HackYourFuture"
-  const myName = 'HackYourFuture'; 
-  const myOwnName =  myName.replace('HackYourFuture','MuhieAldeen');
-  // console.log( myName.replace('HackYourFuture','MuhieAldeen'));
+  const myName = 'HackYourFuture';
+  const myOwnName = myName.replace('HackYourFuture', 'MuhieAldeen');
 
   console.log(giveCompliment(myOwnName));
   console.log(giveCompliment(myOwnName));
