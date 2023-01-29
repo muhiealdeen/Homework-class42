@@ -27,8 +27,8 @@ const fruitBasket = [
 
 // ! Function under test
 function sanitizeFruitBasket(updatedFruitBasket, toBeTakenOut) {
-  const updatedFruit = updatedFruitBasket.filter(
-    (toBeTakenOut) => toBeTakenOut !== 'lemon'
+  const updatedFruit = [...updatedFruitBasket].filter(
+    (fruit) => fruit !== toBeTakenOut
   );
   return updatedFruit;
 }
@@ -42,12 +42,12 @@ describe('sanitizeFruitBasket', () => {
   test('should not modify the original `fruitBasket` array', () => {
     // Save the original contents of the fruit basket
     const originalFruitBasketContents = [...fruitBasket];
-    expect(originalFruitBasketContents).toStrictEqual(fruitBasket);
+    expect(originalFruitBasketContents).toEqual(fruitBasket);
   });
 
   test('should return a new array that does not include the unwanted `lemon`', () => {
     const result = ['apple', 'grapefruit', 'banana', 'watermelon'];
-    const expected = sanitizeFruitBasket(fruitBasket);
-    expect(result).toStrictEqual(expected);
+    const expected = sanitizeFruitBasket(fruitBasket, 'lemon');
+    expect(result).toEqual(expected);
   });
 });

@@ -32,7 +32,7 @@ const mondayTasks = [
 const hourlyRate = 25;
 
 function computeEarnings(taskDuration, rateDuration) {
-  taskDuration.map((task) => task.duration);
+  taskDuration.filter((task) => task.duration);
   const earnings = taskDuration
     .map((task) => (task.duration / 60) * rateDuration)
     .reduce((total, currentValue) => total + currentValue);
