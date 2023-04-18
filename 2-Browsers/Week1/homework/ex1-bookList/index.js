@@ -17,7 +17,19 @@ https: //hyf-js2-week1-makeme-ex1-demo.herokuapp.com/
 -----------------------------------------------------------------------------*/
 //cspell: enable
 
+const { doc } = require('prettier');
+
 function createBookList(books) {
+  const ulElement = document.createElement('ul');
+  for (let i = 0; i < books.length; i++) {
+    const book = books[i];
+    const liElement = document.createElement('li');
+    const pElement = document.createElement('p');
+    const imgElement = document.createElement('img');
+
+    pElement.textContent = `${book.title} by ${book.author}`;
+  }
+
   // TODO your code goes in here, return the ul element
 }
 

@@ -1,1 +1,24 @@
 /* Write your style here */
+
+.book-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.book-list li {
+  margin-bottom: 1em;
+}
+
+.book-list li img {
+  float: left;
+  margin-right: 1em;
+}
+
+.book-list li.read {
+  color: green;
+}
+
+.book-list li.unread {
+  color: red;
+}

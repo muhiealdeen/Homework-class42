@@ -11,12 +11,13 @@ const NUM_ROWS = 40;
 
 // Create a cell with the given coordinates and randomly assign its begin state:
 // life or death
-function createCell(x, y) {
+function createCell(x, y, alive) {
   const alive = Math.random() > 0.5;
   return {
     x,
     y,
-    alive,
+    alive: alive,
+    lifeTime: alive ? 1 : 0,
   };
 }
 
@@ -46,6 +47,7 @@ function createGame(context, numRows, numColumns) {
   // Draw a cell onto the canvas
   function drawCell(cell) {
     // Draw cell background
+    const opacity = opacity(cell.lifeTime);
     context.fillStyle = '#303030';
     context.fillRect(
       cell.x * CELL_SIZE,
@@ -56,7 +58,7 @@ function createGame(context, numRows, numColumns) {
 
     if (cell.alive) {
       // Draw living cell inside background
-      context.fillStyle = `rgb(24, 215, 236)`;
+      context.fillStyle = `rgba(24, 215, 236, ${opacity})`;
       context.fillRect(
         cell.x * CELL_SIZE + 1,
         cell.y * CELL_SIZE + 1,
