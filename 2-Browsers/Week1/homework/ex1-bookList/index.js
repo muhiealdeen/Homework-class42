@@ -16,9 +16,6 @@ https: //hyf-js2-week1-makeme-ex1-demo.herokuapp.com/
 
 -----------------------------------------------------------------------------*/
 //cspell: enable
-
-const { doc } = require('prettier');
-
 function createBookList(books) {
   const ulElement = document.createElement('ul');
   for (let i = 0; i < books.length; i++) {
@@ -28,9 +25,24 @@ function createBookList(books) {
     const imgElement = document.createElement('img');
 
     pElement.textContent = `${book.title} by ${book.author}`;
+    liElement.appendChild(pElement);
+    liElement.appendChild(imgElement);
+
+    imgElement.src = `./assets/${book.title
+      .toLowerCase()
+      .split(' ')
+      .join('_')}.jpg`;
+    imgElement.alt = `${book.title} book cover`;
+
+    if (book.alreadyRead) {
+      liElement.style.backgroundColor = `green`;
+    } else {
+      liElement.style.backgroundColor = `red`;
+    }
+    ulElement.appendChild(liElement);
   }
 
-  // TODO your code goes in here, return the ul element
+  return ulElement;
 }
 
 function main() {
