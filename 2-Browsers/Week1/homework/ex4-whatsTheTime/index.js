@@ -20,7 +20,4 @@ function addCurrentTime() {
   }, 1000);
 }
 
-// Execute addCurrentTime when the browser has completed loading the page
-
-// TODO execute `addCurrentTime` when the browser has completed loading the page
 window.addEventListener('load', addCurrentTime);
